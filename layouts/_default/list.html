@@ -30,7 +30,6 @@
                     {{ $resizedImage := $imageResource.Resize "x300" }}  <!-- Resize the image to a width of 300 pixels -->
                     <!-- <img src="{{ $resizedImage.Permalink }}" alt="Image for {{ $lastSegment }}"> -->
                 
-
                     <div style="background-image: url('{{ $resizedImage.Permalink }}');" class="child randompanel">
                         <a href="{{ .RelPermalink }}" class="full-link">{{ .Title }}</a>
                     </div>  <!-- This won't because it can't find the fucking image -->
@@ -39,18 +38,10 @@
                     <p>No image found for {{ $imageName }}</p>
                 {{ end }}
 
-
-
             {{ end }}
         {{ end }}
 
-
-
-
-                
-            
-
     </div>
 </div>
-<!-- <script src="/scripts/home.js"></script> -->
+<script src="/scripts/home.js"></script>
 {{ end }}
