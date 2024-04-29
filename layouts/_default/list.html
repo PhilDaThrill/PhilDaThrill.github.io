@@ -1,0 +1,56 @@
+{{ define "main" }}
+
+<div style="padding-top: 50px;" class="px-sm-0 px-md-2 px-lg-5 container justify-content-center" role="main">
+
+    <!-- Welcome section -->
+    {{ with .Content }}
+    <div class="row ms-2">
+        <h2 class="outfit-font h-4 col-6">{{.}}</h2>
+    </div>
+    {{ end }}
+
+    <!-- Artists -->
+    <div id="panels" class="parent pb-5 text-center fontsize-sm-responsive">
+
+
+
+        {{ range .Site.RegularPages }}
+        
+            {{ if in .Params.categories "artists" }}
+
+                <!-- Accessing the content of the page itself -->
+
+                {{ $lastSegment := path.Base .RelPermalink }}
+                {{ $imageName := print $lastSegment ".jpg" }}
+
+                <!-- Fetch the image resource using the constructed image name -->
+                {{ $imageResource := .Resources.GetMatch $imageName }}
+
+                {{ if $imageResource }}
+                    {{ $resizedImage := $imageResource.Resize "x300" }}  <!-- Resize the image to a width of 300 pixels -->
+                    <!-- <img src="{{ $resizedImage.Permalink }}" alt="Image for {{ $lastSegment }}"> -->
+                
+
+                    <div style="background-image: url('{{ $resizedImage.Permalink }}');" class="child randompanel">
+                        <a href="{{ .RelPermalink }}" class="full-link">{{ .Title }}</a>
+                    </div>  <!-- This won't because it can't find the fucking image -->
+                {{ else }}
+        
+                    <p>No image found for {{ $imageName }}</p>
+                {{ end }}
+
+
+
+            {{ end }}
+        {{ end }}
+
+
+
+
+                
+            
+
+    </div>
+</div>
+<!-- <script src="/scripts/home.js"></script> -->
+{{ end }}

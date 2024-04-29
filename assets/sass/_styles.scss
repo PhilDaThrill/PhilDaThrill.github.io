@@ -1,0 +1,167 @@
+/* All style adjustments that concern individual components */
+
+/* Defining default styles */
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  font-family: 'Gill Sans', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+// ~~~~~~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~
+header {
+  width: 100%;
+  height: 120px;
+}
+
+
+// ~~~~~~~~~~~~~~~~~~~~ Rest ~~~~~~~~~~~~~~~
+
+main,
+footer,
+html {
+  width: 100%;
+  background-size: cover !important;
+}
+
+.container-fluid {
+  padding: 0px !important; 
+  background-size: cover !important;
+}
+
+h1 {
+  font-size: 24px;
+  padding-top: 20px;
+  /* Adjust the value as needed */
+}
+
+
+h2 {
+  font-size: 18px;
+  padding-top: 12px;
+  /* Adjust the value as needed */
+}
+
+/* Logo */
+.main-logo {
+  width: 286px;
+  height: 330px;
+}
+
+/* Icons styling */
+
+/* Cart */
+.svg-icon {
+  filter: brightness(0) saturate(100%) invert(46%) sepia(0%) saturate(0%) hue-rotate(147deg) brightness(93%) contrast(90%);
+  transition: filter 0.3s ease; /* Smooth transition for the filter */
+}
+
+.svg-icon:hover {
+  filter: brightness(0) saturate(100%) invert(80%) sepia(4%) saturate(429%) hue-rotate(189deg) brightness(91%) contrast(91%);
+}
+
+.badge:after{
+  content:attr(value);
+  font-size:12px;
+  color: #fff;
+  background: rgb(222, 222, 222);
+  border-radius:50%;
+  padding: 0 5px;
+  position:relative;
+  left:-8px;
+  top:-10px;
+  opacity:0.9;
+}
+
+/* Social Media Buttons */
+.socialMediaIcon {
+  width: 8vw;
+  height: 8vw;
+  max-width: 65px;
+  max-height: 65px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.imageLink {
+  text-decoration: none;
+  display: inline-block;
+  /* Allows the opacity transition */
+}
+
+.hover-link {
+  text-decoration: none;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  /* Smooth transition for hover effect */
+}
+
+.hover-link:hover,
+.hover-link:focus {
+  opacity: 1;
+  /* Full opacity on hover/focus */
+}
+
+.imageLink:hover .socialMediaIcon,
+.imageLink:focus .socialMediaIcon {
+  opacity: 1;
+  /* Full opacity on hover/focus for better interaction */
+}
+
+.post-title-link {
+  text-decoration: none;
+}
+
+.post-title-link:hover {
+  color: gray;
+}
+
+.post-preview h2:hover {
+  color: gray;
+}
+
+.custom-button {
+  background-color: #24353b;
+  color: rgb(255, 255, 255);
+  width: 200px !important;
+  /* Fixed width */
+  height: 75px !important;
+  /* Fixed height */
+}
+
+/* Banners */
+.welcomebanner {
+  background-image: url(/images/welcomestudio10.png);
+  background-size: cover;
+}
+
+
+// Artist banner
+.artistbanner {
+  background-size: cover;
+  width: 100%;    /* Ensure it spans the full width */
+  min-height: 400px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  background-position: center 25%;
+}
+
+.openbetabanner {
+  background-image: url(/images/openbetabanner.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block; /* Makes the div only as wide as its content */
+  padding: 20px 40px; /* Adjust padding as necessary */
+  color: white; /* Assuming you want white text */
+  font-family: 'Red Hat Display', sans-serif; /* Specify the font */
+  font-weight: bold; /* Bold font */
+  text-align: center; /* Center the text */
+}
+
+.blogbanner {
+  background-size: cover;
+}

@@ -1,0 +1,114 @@
+@import "variables";
+@import "fonts";
+@import "styles";
+@import "responsive";
+
+/* Navbar background */
+
+/* Custom CSS to ensure the navbar dropdown has a solid background */
+@media (max-width: 992px) {
+
+  /* Adjust based on the navbar-expand-lg breakpoint */
+  .navbar.bg-transparent .navbar-collapse {
+    background-color: #1d2526;
+    /* Solid background color for the dropdown */
+  }
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.child {
+  margin: 5px;
+  background-color: rgb(102, 102, 102); /* Default background color */
+  position: relative; /* Required for percentage padding trick */
+  background-size: cover; /* Ensure the image covers the entire panel */
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.child::before {
+  content: ""; /* Required for pseudo-elements */
+  display: block;
+  padding-top: 70%; /* Increased from 60% to 78% to add about 30% more height */
+}
+
+.child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent; /* Start with a transparent background */
+  transition: background-color 0.3s ease;
+  pointer-events: none; /* Ensure it doesn't interfere with mouse events */
+}
+
+.child:hover::after {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the overlay on hover */
+}
+
+.child .text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; /* Stretch the text container to fill the parent */
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  z-index: 1; /* Ensure text appears above the ::after pseudo-element */
+}
+
+
+.full-link {
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+  height: 100%; /* Full height of the parent */
+  width: 100%; /* Full width of the parent */
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none; /* No underline */
+  color: inherit; /* Inherits white color for the text */
+  z-index: 2; /* Ensures it's clickable above all other content */
+}
+
+
+/* Image gradients */
+.gradient-rl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; // Ensures it stretches to cover the full container
+  bottom: 0; // Ensures it stretches to cover the full container
+  background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  /* Allows clicking through the overlay */
+}
+
+.gradient-td {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; // Ensures it stretches to cover the full container
+  bottom: 0; // Ensures it stretches to cover the full container
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+  pointer-events: none;
+  /* Allows clicking through the overlay */
+}
+
+.orange-bar {
+  height: 5px; /* Adjust the height as needed */
+  background-color: orange;
+}
+
+

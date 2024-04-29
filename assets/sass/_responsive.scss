@@ -1,0 +1,99 @@
+/* Custom classes for responsiveness */
+
+/* Default size for extra-small devices */
+.fontsize-responsive {
+    .fontsize-responsive {
+        font-size: calc(14.0vw);
+    }
+}
+
+.randompanel {
+    min-width: 0px;
+}
+
+
+/* Small devices */
+@media (min-width: 0px) {
+    .fontsize-responsive {
+        font-size: calc(10.0vw);
+    }
+
+    .fontsize-sm-responsive {
+        font-size: 28px;
+    }
+
+    .logo-md {
+        display: inline;
+    }
+
+    .logo-lg {
+        display: none;
+    }
+
+    // Artist grid
+    .child {
+        flex-basis: 100%; /* Each child takes up an entire row */
+      }
+}
+
+/* Small devices (≥576px) */
+@media (min-width: 576px) {
+    .fontsize-responsive {
+        font-size: calc(11.0vw);
+    }
+
+    .parent {
+        flex-wrap: wrap;
+    }
+
+    .child {
+        flex: 1 0 calc(50% - 10px); /* Each child takes up 50% of container's width minus margin */
+        margin: 5px;
+    }
+
+}
+
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+    .fontsize-responsive {
+        font-size: 3.5rem;
+        /* Adjust as needed for medium devices */
+    }
+
+    .fontsize-sm-responsive {
+        font-size: calc(2.8vw);
+    }
+
+    .logo-md {
+        display: none;
+    }
+
+    .logo-lg {
+        display: inline;
+    }
+}
+
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+    .fontsize-responsive {
+        font-size: 4.0rem;
+        /* Adjust as needed for large devices */
+    }
+
+    .child {
+        flex: 1 0 calc(30% - 10px); /* Each child takes up 50% of container's width minus margin */
+        margin: 5px;
+    }
+}
+
+/* Extra-large devices (≥1200px) */
+@media (min-width: 1200px) {
+    .fontsize-responsive {
+        font-size: 5.0rem;
+    }
+
+
+    .fontsize-sm-responsive {
+        font-size: 36px;
+    }
+}

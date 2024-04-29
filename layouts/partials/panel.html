@@ -1,0 +1,13 @@
+
+
+
+{{ with .Resources.GetMatch (printf "**/%s" .Params.image) }}
+    {{ $image := .Resize "100x10" }} 
+    {{ $image := $image.Process "r90" }}
+    <div style="background-image: url('{{ $image.Permalink }}');" class="child randompanel">
+        <a href="{{ $.RelPermalink }}" class="full-link">{{ $.Title }}</a>
+    </div>
+{{ else }}
+    <div class="child randompanel">Image not found</div>
+{{ end }}
+

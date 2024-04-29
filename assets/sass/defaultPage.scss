@@ -1,0 +1,17 @@
+/* Make background cover only header and footer */
+header {
+  background: url(/images/hexbackgroundalt.jpeg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Optional: makes the background fixed during scroll */
+}
+
+footer {
+  background-color: rgba(61, 61, 61, 0.713);
+  // background: url(/images/hexbackgroundalt.jpeg) top center no-repeat;
+  background-size: cover;
+  background-attachment: fixed; /* Optional: makes the background fixed during scroll */
+}
+
+body, html {
+  color: rgb(0, 0, 0);
+}

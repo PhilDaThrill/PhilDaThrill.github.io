@@ -1,0 +1,11 @@
+
+// Override Bootstrap’s default variables
+$theme-colors: (
+  "primary": #301f3f, // Customize the primary color
+  "secondary": #ffffff, // And any other colors as needed
+);
+
+// Import Bootstrap SASS
+@import "node_modules/bootstrap/scss/bootstrap";
+
+

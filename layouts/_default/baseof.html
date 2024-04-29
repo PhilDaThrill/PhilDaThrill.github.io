@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Page.Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- General CSS -->
+    {{ $style:= resources.Get "sass/main.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    <!-- CSS for all other pages -->
+    {{ $backgroundStyle:= resources.Get "sass/defaultPage.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $backgroundStyle.Permalink }}">
+
+    <!-- Fonts -->
+    <!-- Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Customized Bootstrap -->
+    {{ $backgroundStyle:= resources.Get "sass/customSass/custom.scss" | resources.ToCSS | resources.Minify }}
+    <link rel="stylesheet" href="{{ $backgroundStyle.Permalink }}">
+
+    <!-- Favicons, etc. -->
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/images/icons/smallLogo.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon_io/favicon-32x32.png">
+    <link rel="manifest" href="/images/icons/favicon_io/site.webmanifest">
+
+
+</head>
+
+<body class="poppins-extralight">
+    <div class="min-vh-100 d-flex flex-column justify-content-between">
+        <header class="fixed-top d-flex justify-content-between align-items-center">
+            {{ partial "navbar.html" . }}
+        </header>
+
+        <main style="padding-top: 130px;" class="">
+            {{ block "main" . }}
+            {{ end }}
+        </main>
+        <!-- Footer -->
+        {{ partial "footer.html" . }}
+    </div>
+
+    <!-- Fonts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Bootstrap JS (Not sure if this should come from my own Bootstrap source) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- My own scripts -->
+    <script src="/scripts/main.js"></script>
+
+</body>
+
+
+
+</html>

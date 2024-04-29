@@ -1,0 +1,40 @@
+{{ define "main" }}
+<div class="container-fluid" role="main">
+    <div class="row justify-content-center">
+        <div class="col-12">
+
+            <div class="page-heading mb-4">
+                {{ $lastSegment := path.Base .RelPermalink }}
+                {{ $imageName := print $lastSegment ".jpg" }}
+
+                <!-- Fetch the image resource using the constructed image name -->
+                {{ $imageResource := .Resources.GetMatch $imageName }}
+
+                {{ if $imageResource }}
+                    {{ $resizedImage := $imageResource.Resize "x1400" }}
+                    <h1 style="background-image: url('{{ $resizedImage.Permalink }}'); background-position: center {{ with .Params.imageVerticalPos }}{{ . }}{{ else }}center{{ end }}; color: rgb(255, 255, 255);"
+                        class="text-center img-fluid pb-3 d-flex align-items-end justify-content-center fontsize-responsive artistbanner">
+                        {{ .Title }}
+                    </h1>
+                {{ else }}
+                    <p>No image found for {{ $imageName }}</p>
+                {{ end }}
+            </div>
+
+        </div>
+
+        <div class="row mb-5 justify-content-center">
+            <div class="col-sm-10 col-md-8">
+            {{ if .Params.subtitle }}
+                <div class="mt-4 mb-1 cursive-font">
+                    {{ .Params.subtitle }}
+                </div>
+            {{ end }}
+            <div class="mt-3 mb-1">
+                {{ .Content }}
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+{{ end }}
