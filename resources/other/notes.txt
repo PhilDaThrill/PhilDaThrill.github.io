@@ -13,7 +13,6 @@ Eine Webseite* -> nicht total komplex, aber auch nicht total simpel
 	- Einrichten von Hosting
 	- Erweiterbar durch
 		- Artist subpages (?)
-		- Kontaktformular 
 
 _____
 

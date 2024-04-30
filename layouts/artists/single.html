@@ -1,5 +1,7 @@
 {{ define "main" }}
 <div class="container-fluid" role="main">
+
+    <!-- Title Banner -->
     <div class="row justify-content-center">
         <div class="col-12">
 
@@ -11,30 +13,74 @@
                 {{ $imageResource := .Resources.GetMatch $imageName }}
 
                 {{ if $imageResource }}
-                    {{ $resizedImage := $imageResource.Resize "x1400" }}
-                    <h1 style="background-image: url('{{ $resizedImage.Permalink }}'); background-position: center {{ with .Params.imageVerticalPos }}{{ . }}{{ else }}center{{ end }}; color: rgb(255, 255, 255);"
-                        class="text-center img-fluid pb-3 d-flex align-items-end justify-content-center fontsize-responsive artistbanner">
-                        {{ .Title }}
-                    </h1>
+                {{ $resizedImage := $imageResource.Resize "x1400" }}
+                <h1 style="background-image: url('{{ $resizedImage.Permalink }}'); background-position: center {{ with .Params.imageVerticalPos }}{{ . }}{{ else }}center{{ end }}; color: rgb(255, 255, 255);"
+                    class="text-center img-fluid pb-3 d-flex align-items-end justify-content-center fontsize-responsive artistbanner">
+                    {{ .Title }}
+                </h1>
                 {{ else }}
-                    <p>No image found for {{ $imageName }}</p>
+                <p>No image found for {{ $imageName }}</p>
                 {{ end }}
             </div>
 
         </div>
+    </div>
 
-        <div class="row mb-5 justify-content-center">
-            <div class="col-sm-10 col-md-8">
+    <!-- Preamble -->
+    <div class="row mx-2 mb-3 justify-content-center">
+        <div class="col-sm-10 col-md-8">
             {{ if .Params.subtitle }}
-                <div class="mt-4 mb-1 cursive-font">
-                    {{ .Params.subtitle }}
-                </div>
-            {{ end }}
-            <div class="mt-3 mb-1">
-                {{ .Content }}
+            <div class="mt-4 mb-1 poppins-thin-italic">
+                {{ .Params.subtitle }}
             </div>
-        </div>
+            {{ end }}
         </div>
     </div>
+
+    <!-- Social Media icons -->
+    <div class="row mx-2 justify-content-center">
+        <div class="col-md-5 my-2 px-0 px-xl-5 d-flex align-items-center justify-content-around">
+            {{ if .Params.instagramlink }}
+            <a class="imageLink" href="{{ .Params.instagramlink }}" aria-label="Instagram">
+                <img class="socialMediaIcon mx-2" src="/images/icons/instagramlogo.png" alt="Instagram">
+            </a>
+            {{ end }}
+            {{ if .Params.facebooklink }}
+            <a class="imageLink" href="{{ .Params.facebooklink }}" aria-label="Facebook">
+                <img class="socialMediaIcon mx-2" src="/images/icons/facebooklogo.png" alt="Facebook">
+            </a>
+            {{ end }}
+            {{ if .Params.youtubelink }}
+            <a class="imageLink" href="{{ .Params.youtubelink }}" aria-label="YouTube">
+                <img class="socialMediaIcon mx-2" src="/images/icons/youtubelogo.png" alt="YouTube">
+            </a>
+            {{ end }}
+            {{ if .Params.tiktoklink }}
+            <a class="imageLink" href="{{ .Params.tiktoklink }}" aria-label="Tiktok">
+                <img class="socialMediaIcon mx-2" src="/images/icons/tiktoklogo.png" alt="TikTok">
+            </a>
+            {{ end }}
+            {{ if .Params.spotifylink }}
+            <a class="imageLink" href="{{ .Params.spotifylink }}" aria-label="Spotify">
+                <img class="socialMediaIcon mx-2" src="/images/icons/spotifylogo.png" alt="Spotify">
+            </a>
+            {{ end }}
+
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="row mx-2 mt-3 mb-5 justify-content-center">
+        <div class="col-sm-12 col-md-10 col-lg-8 mt-3 mb-1">
+            {{ .Content }}
+        </div>
+    </div>
+
+
+
+
+
+
+</div>
 </div>
 {{ end }}
