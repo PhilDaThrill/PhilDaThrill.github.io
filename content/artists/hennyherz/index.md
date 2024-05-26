@@ -12,12 +12,12 @@ categories:
 title: Henny Herz
 
 # Verrutsche den Bildausschnitt nach oben oder unten - 0% ganz oben & 100% ganz unten 
-imageVerticalPos: 50%
+imageVerticalPos: 30%
 
 # OPTIONAL - Text wird in kursiv direkt unter dem Titelbild angezeigt
 subtitle: "[Artist Subtitle] Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
 
-# OPTIONAL - Social Media Links
+# OPTIONAL - Social Media Links (wenn nicht vorhanden Zeile einfach löschen)
 instagramlink: "https://www.instagram.com/orpheuseffects/"
 facebooklink: "https://www.facebook.com/ofx.official"
 youtubelink: "https://www.youtube.com/channel/UCOqF5tiKNZ6IkyJ74PUD3Hg"
@@ -57,7 +57,7 @@ But first, let's take a look at the four modes, which are
 #### Dates:
 - [**Backstage München**](https://backstage.eu/glenn-hughes-50-years-burn-album-tour-2024.html), 04.08.2024 ab 20:00 Uhr 
 - [**Backstage München**](https://backstage.eu/glenn-hughes-50-years-burn-album-tour-2024.html), 08.08.2024 ab 20:00 Uhr 
-- [**Backstage München**](https://backstage.eu/glenn-hughes-50-years-burn-album-tour-2024.html), 021.08.2024 ab 20:00 Uhr 
+- [**Backstage München**](https://backstage.eu/glenn-hughes-50-years-burn-album-tour-2024.html), 21.08.2024 ab 20:00 Uhr 
 
 #### Booking Agent
 [George Martin](https://en.wikipedia.org/wiki/George_Martin), [Brian Epstein](https://en.wikipedia.org/wiki/Brian_Epstein)

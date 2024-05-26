@@ -10,10 +10,13 @@
                 {{ $imageName := print $lastSegment ".jpg" }}
 
                 <!-- Fetch the image resource using the constructed image name -->
-                {{ $imageResource := .Resources.GetMatch $imageName }}
+                {{ $imageResource := .Resources.GetMatch "bild.jpg" }}
 
                 {{ if $imageResource }}
                 {{ $resizedImage := $imageResource.Resize "x1400" }}
+
+                {{ $imageVerticalPos := default "50%" .Params.imageVerticalPos }}
+
                 <h1 style="background-image: url('{{ $resizedImage.Permalink }}'); background-position: center {{ with .Params.imageVerticalPos }}{{ . }}{{ else }}center{{ end }}; color: rgb(255, 255, 255);"
                     class="text-center img-fluid pb-3 d-flex align-items-end justify-content-center fontsize-responsive artistbanner">
                     {{ .Title }}
@@ -73,12 +76,19 @@
     <div class="row mx-2 mt-3 mb-5 justify-content-center">
         <div class="col-sm-12 col-md-10 col-lg-8 mt-3 mb-1">
             {{ .Content }}
+            <h5>Tech Rider</h5>
+
+            {{ $techResource := .Resources.GetMatch "techrider.pdf" }}
+            <p><a href="{{ $techResource.Permalink }}">Download Tech Rider</a>.</p>
+            <h5>Info Sheet</h5>
+
+            {{ $infoResource := .Resources.GetMatch "infosheet.pdf" }}
+            <p><a href="{{ $infoResource.Permalink }}">Download Info Sheet</a>.</p>
+            
+
+        
         </div>
     </div>
-
-
-
-
 
 
 </div>

@@ -1,5 +1,5 @@
 <nav
-  class="navbar container-fluid bg-transparent bg-success fontsize-sm-responsive navbar-expand-md border-body px-4"
+  class="navbar container-fluid bg-secondary bg-success fontsize-sm-responsive navbar-expand-md border-body px-4"
   data-bs-theme="light" style="z-index: 2000;">
 
     <a style="margin-right: 0px;" class="navbar-brand logo-md" href="/">
@@ -26,27 +26,27 @@
         </li>
 
         <!-- Team -->
-        <li class="nav-item col-2 text-center">
+        <!-- <li class="nav-item col-2 text-center">
           {{ if eq .RelPermalink "/products/" }}
           <a class="nav-link active" aria-current="page" href="/team/">TEAM</a>
           {{ else }}
           <a class="nav-link" href="/team/">TEAM</a>
           {{ end }}
-        </li>
+        </li> -->
 
-        <!-- <a style="margin-right: 0px;" class="navbar-brand logo-lg col-2 text-center" href="/">
+        <a style="margin-right: 0px;" class="navbar-brand logo-lg col-2 text-center" href="/">
           <img src="/images/raw/Inselgruppe-Sonne-Logo/Inselgruppe-Sonne-Logo-1.png" id="largeLogo" class="img-fluid"
             alt="Logo" width="130" height="130">
-        </a> -->
+        </a>
 
         <!-- Friends -->
-        <li class="nav-item col-2 text-center">
+        <!-- <li class="nav-item col-2 text-center">
           {{ if eq .RelPermalink "/blog/" }}
           <a class="nav-link active" aria-current="page" href="/friends/">FRIENDS</a>
           {{ else }}
           <a class="nav-link" href="/friends/">FRIENDS</a>
           {{ end }}
-        </li>
+        </li> -->
 
         <!-- Shop link -->
         <li class="nav-item col-2 text-center">
@@ -64,7 +64,7 @@
 
       </ul>
 
-      <!-- <div style="height: 5px;" class="orange-bar"></div> -->
+      <div style="height: 5px;" class="orange-bar"></div>
     </div>
   {{ if eq .RelPermalink "/" }}
   <script src="/scripts/logoloader.js" defer></script>
